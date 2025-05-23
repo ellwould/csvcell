@@ -6,7 +6,7 @@ CSV Cell is a Go package with functions to read from a CSV file and write to a C
 >[!IMPORTANT]
 >The ReadCSV function returnes each row within the CSV file as an array
 >
->Example of a Go program using the ReadCSV function:
+>Example of a [Go Program](https://github.com/ellwould/csvcell/blob/main/example/readexample.go) using the ReadCSV function:
 >```go
 >package main
 >
