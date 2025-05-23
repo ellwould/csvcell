@@ -1,5 +1,5 @@
 # csvcell
-CSV Cell is a Go package with functions to read from a CSV file and write to a CSV file
+#### CSV Cell is a Go package with functions to read from a CSV file and write to a CSV file
 
 <br>
 
@@ -31,7 +31,7 @@ CSV Cell is a Go package with functions to read from a CSV file and write to a C
 >}
 >```
 >
-><br>Output in CLI:
+><br><b>Output in CLI:</b>
 >```bash
 >Name Type Quantity
 >Apple Fruit 1
@@ -45,7 +45,22 @@ CSV Cell is a Go package with functions to read from a CSV file and write to a C
 >Banana Fruit 34
 >Broccoli Vegetable 9
 >```
-
+>
+><br>The [example.csv](https://github.com/ellwould/csvcell/blob/main/example/example.csv) file used:
+>
+>| Name	| Type | Quantity |
+>|------|------|----------|
+>|Apple|Fruit|1|
+>|Pineapple|Fruit|2|
+>|Pear|Fruit|6|
+>|Orange|Fruit|5|
+>|Grape|Fruit|3|
+>|Carrot|Vegetable|2|
+>|Lemon|Fruit|8|
+>|Cherry|Fruit|55|
+>|Banana|Fruit|34|
+>|Broccoli|Vegetable|9|
+> 
 
 ---
 
