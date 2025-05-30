@@ -61,9 +61,40 @@
 >|Cherry|Fruit|55|
 >|Banana|Fruit|34|
 >|Broccoli|Vegetable|9|
-> 
+>
 
----
+<br>
+
+>[!IMPORTANT]
+>Example of a [Go Program](https://github.com/ellwould/csvcell/blob/main/example/writeexample.go) using the WriteCSV function:
+>```go
+>package main
+>
+>import (
+>        "github.com/ellwould/csvcell"
+>)
+>
+>func main() {
+>
+>        dirPath := "/"
+>        fileName := "example.csv"
+>
+>        // Data to write to CSV
+>        produce := "Broccoli"
+>        produceType := "Vegetable"
+>        quantity := "9"
+>
+>        // Variable with all strings concatenated and commas included inbetween
+>        data := produce + "," + produceType + "," + quantity
+>
+>        // WriteCSV function called from csvcell package
+>        // (Directory Path, name of CSV file, commas to prepend, data to write to the file, commas to append)
+>        csvcell.WriteCSV(dirPath, fileName, 0, data, 0)
+>}
+>```
+>
+
+<br>
 
 >[!NOTE]
 >For a list of abbreviations and there meanings used throughout this repository please refer to this [README](https://github.com/Ellwould/information_technology_and_telecommunication_abbreviations)
