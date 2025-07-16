@@ -7,6 +7,7 @@ import (
 	"strings"
 )
 
+// Function to read a CSV file
 func ReadCSV(rootDirPath string, fileName string) (result [][18278]string) {
 
 	// Go introduced OpenRoot in version 1.24, it restricts file operations to a single directory
@@ -46,6 +47,7 @@ func ReadCSV(rootDirPath string, fileName string) (result [][18278]string) {
 	return result
 }
 
+// Function to write to a CSV file
 func WriteCSV(rootDirPath string, fileName string, commaPrepend int, csvRow string, commaAppend int) {
 
 	// Go introduced OpenRoot in version 1.24, it restricts file operations to a single directory
@@ -69,4 +71,37 @@ func WriteCSV(rootDirPath string, fileName string, commaPrepend int, csvRow stri
 	if err != nil {
 		panic(err)
 	}
+}
+
+// Function to retrieve all contents from a plain text file
+func FileData(rootDirPath string, fileName string) (result string) {
+
+	// Go introduced OpenRoot in version 1.24, it restricts file operations to a single directory
+	rootDir, err := os.OpenRoot(rootDirPath)
+
+	if err != nil {
+		panic("Directory path does not exist")
+	}
+
+	defer rootDir.Close()
+
+	file, err := rootDir.Open(fileName)
+
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	defer file.Close()
+
+	scanner := bufio.NewScanner(file)
+
+	var fileSlice []string
+
+	for scanner.Scan() {
+		line := scanner.Text()
+		fileSlice = append(fileSlice, line)
+	}
+
+	result = strings.Join(fileSlice, "")
+	return result
 }
