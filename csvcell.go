@@ -105,3 +105,25 @@ func FileData(rootDirPath string, fileName string) (result string) {
 	result = strings.Join(fileSlice, "")
 	return result
 }
+
+// Function to retrieve all file and directory names from a specific directory
+func DirList(rootDirPath string) (result []string) {
+        rootDir, err := os.Open(rootDirPath)
+
+        if err != nil {
+                panic("Directory path does not exist")
+        }
+
+        defer rootDir.Close()
+
+        fileList, err := rootDir.ReadDir(-1)
+
+        if err != nil {
+                log.Fatal(err)
+        }
+
+        for _, fileListLoop := range fileList {
+                result = append(result, fileListLoop.Name())
+        }
+        return result
+}
